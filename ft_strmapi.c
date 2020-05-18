@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 13:56:02 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 14:47:47 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 18:45:37 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		dest[i] = (*f)(i, s[i]);
+		dest[i] = f(i, s[i]);
 		i++;
 	}
 	dest[i] = '\0';

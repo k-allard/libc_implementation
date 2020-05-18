@@ -6,13 +6,23 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 13:56:02 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/11 20:13:56 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 22:43:54 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_token_count(char const *str, char c)
+static void	ft_freeresult(char ***result)
+{
+	int	i;
+
+	i = 0;
+	while ((*result)[i])
+		free((*result)[i++]);
+	free(*result);
+}
+
+static int	ft_token_count(char const *str, char c)
 {
 	int tok;
 	int i;
@@ -25,12 +35,12 @@ int		ft_token_count(char const *str, char c)
 			tok++;
 		i++;
 	}
-	if (i > 0 && str[i] == '\0' && str[i - 1] != c)
+	if (i > 0 && !str[i] && str[i - 1] != c)
 		tok++;
 	return (tok);
 }
 
-void	ft_split_tokens(char *scopy, char c, char ***result)
+static void	ft_split_tokens(char *scopy, char c, char ***result)
 {
 	int i;
 	int tok;
@@ -43,14 +53,15 @@ void	ft_split_tokens(char *scopy, char c, char ***result)
 	while (scopy[i])
 	{
 		end = i + 1;
-		while (scopy[end] != c && scopy[end] != '\0')
+		while (scopy[end] != c && scopy[end])
 			end++;
-		if (!scopy[end])
-			i_next = end;
-		else
-			i_next = end + 1;
+		i_next = scopy[end] ? (end + 1) : end;
 		scopy[end] = '\0';
-		(*result)[tok++] = ft_strdup(&scopy[i]);
+		if (!((*result)[tok++] = ft_strdup(&scopy[i])))
+		{
+			ft_freeresult(result);
+			return ;
+		}
 		while (scopy[i_next] == c)
 			i_next++;
 		i = i_next;
@@ -62,7 +73,7 @@ void	ft_split_tokens(char *scopy, char c, char ***result)
 ** Allocates and returns an array of strings obtained.
 */
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	*scopy;
 	char	**result;

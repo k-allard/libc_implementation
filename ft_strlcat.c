@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 12:16:06 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/16 13:07:23 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/19 00:15:23 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ** Adds the src string --> to the dest string
 ** Overwrites the terminating null byte at the end of dest
 ** Guarantees to NUL-terminate the result
+** Return the initial length of dst plus the length of src
 */
 
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize)

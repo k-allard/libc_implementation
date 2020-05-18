@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 23:26:07 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 15:37:36 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 17:00:08 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst)
+	if (!lst || !del)
 		return ;
-	if (del)
-		del(lst->content);
+	del(lst->content);
 	free((void *)lst);
 }

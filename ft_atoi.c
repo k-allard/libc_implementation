@@ -6,13 +6,13 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 06:54:54 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 13:31:35 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 23:16:14 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int ch)
+static int	ft_isspace(int ch)
 {
 	if (ch == '\t' || ch == '\n' || ch == '\v' ||
 		ch == '\f' || ch == '\r' || ch == ' ')
@@ -26,7 +26,7 @@ int	ft_isspace(int ch)
 ** which has undef behavior if the value of the result cannot be represented.
 */
 
-int	ft_atoi(char *str)
+int			ft_atoi(char *str)
 {
 	unsigned long long	result;
 	int					length_max;
@@ -40,12 +40,12 @@ int	ft_atoi(char *str)
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-		sign = str[i++] == '-' ? -1 : 1;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+		sign = (str[i++] == '-') ? -1 : 1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i++] - '0';
 		if (length_max-- < 0)
-			return (sign == 1 ? -1 : 0);
+			return ((sign == 1) ? -1 : 0);
 		if (result >= LLMAX && sign == 1)
 			return (-1);
 		if (result > LLMAX && sign == -1)

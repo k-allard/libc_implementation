@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 06:54:54 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 16:01:50 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 23:27:33 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Counts number of digits in an positive integer.
 */
 
-int		ft_digits(int n)
+static int	ft_digits(int n)
 {
 	int dig;
 
@@ -30,7 +30,7 @@ int		ft_digits(int n)
 ** Allocates and returns a string representing the int received as an argument.
 */
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		negative;

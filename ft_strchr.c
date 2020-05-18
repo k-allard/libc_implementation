@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 12:11:32 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 15:10:36 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/19 00:09:54 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *str, int c)
 			return (char *)(str + i);
 		i++;
 	}
-	if (c == '\0')
+	if (!c)
 		return (char *)(str + i);
-	return (0);
+	return (NULL);
 }

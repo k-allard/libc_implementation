@@ -6,13 +6,13 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 22:54:18 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/16 13:07:36 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 22:55:11 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy_rev(void *dest, const void *src, size_t n)
+static void	*ft_memcpy_rev(void *dest, const void *src, size_t n)
 {
 	if (!src && !dest)
 		return (0);
@@ -28,7 +28,7 @@ void	*ft_memcpy_rev(void *dest, const void *src, size_t n)
 ** The two strings may overlap.
 */
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void		*ft_memmove(void *dest, const void *src, size_t len)
 {
 	if (dest < src)
 		return (ft_memcpy(dest, src, len));

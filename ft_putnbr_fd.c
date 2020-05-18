@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 21:47:59 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 16:42:25 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/18 17:13:50 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n == -2147483648)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 	if (n < 0)

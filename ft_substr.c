@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 13:56:02 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/17 14:35:39 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/19 00:21:23 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = ft_strlen(s);
 	if (i < start || (i - start) < len)
-		return (char *)(ft_calloc(1, sizeof(s[0])));
+		return (char *)(ft_calloc(1, sizeof(char)));
 	i = 0;
 	if (!(dest = (char*)malloc(sizeof(*dest) * (len + 1))))
 		return (NULL);

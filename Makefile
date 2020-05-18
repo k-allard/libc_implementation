@@ -6,7 +6,7 @@
 #    By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/30 22:32:54 by kallard           #+#    #+#              #
-#    Updated: 2020/05/17 13:50:10 by kallard          ###   ########.fr        #
+#    Updated: 2020/05/18 16:40:19 by kallard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,12 +73,12 @@ $(NAME): $(OBJS)
 	@ar r $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
-bonus:	${OBJS} ${OBJSBONUS}
-	@ar r ${NAME} ${OBJS} ${OBJSBONUS}
+bonus:	$(OBJS) $(OBJSBONUS)
+	@ar r $(NAME) $(OBJS) $(OBJSBONUS)
 	@ranlib $(NAME)
 
 clean:
-	@rm -rf $(OBJS) ${OBJSBONUS}
+	@rm -rf $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	@rm -f $(NAME)
