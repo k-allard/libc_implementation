@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 22:25:57 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/18 23:40:08 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/19 13:38:39 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
-	
+
 	if (!new)
 		return ;
 	if (!*lst)
