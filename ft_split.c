@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 13:56:02 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/18 22:43:54 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/20 23:54:30 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	ft_token_count(char const *str, char c)
 	int tok;
 	int i;
 
+	if (c == '\0')
+		return (1);
 	tok = 0;
 	i = 0;
 	while (str[i])
@@ -53,16 +55,16 @@ static void	ft_split_tokens(char *scopy, char c, char ***result)
 	while (scopy[i])
 	{
 		end = i + 1;
-		while (scopy[end] != c && scopy[end])
+		while (scopy[end] != c && scopy[end] != '\0')
 			end++;
-		i_next = scopy[end] ? (end + 1) : end;
+		i_next = scopy[end] > 0 ? (end + 1) : end;
 		scopy[end] = '\0';
 		if (!((*result)[tok++] = ft_strdup(&scopy[i])))
 		{
 			ft_freeresult(result);
 			return ;
 		}
-		while (scopy[i_next] == c)
+		while (c != '\0' && scopy[i_next] == c)
 			i_next++;
 		i = i_next;
 	}
