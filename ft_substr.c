@@ -1,12 +1,6 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/08 13:56:02 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/20 22:25:33 by kallard          ###   ########.fr       */
+/*                 															  */
+/*   			By: kallard <kallard@student.21-school.ru>        			  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	i = ft_strlen(s);
-	if (i < start)
+	if (start >= i)
 		return (char *)(ft_calloc(1, sizeof(char)));
 	if ((i - start) < len)
 		len = i - start;
