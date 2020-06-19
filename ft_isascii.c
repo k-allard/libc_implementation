@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 15:37:19 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/16 17:28:45 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/23 21:19:16 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@
 
 int	ft_isascii(int ch)
 {
-	if (ch >= 0 && ch <= 127)
-		return (1);
-	return (0);
+	return (ch >= 0 && ch <= 127);
 }

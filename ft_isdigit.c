@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 15:05:40 by kallard           #+#    #+#             */
-/*   Updated: 2020/05/16 17:29:00 by kallard          ###   ########.fr       */
+/*   Updated: 2020/05/23 21:19:25 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@
 
 int	ft_isdigit(int ch)
 {
-	if (ch >= '0' && ch <= '9')
-		return (1);
-	return (0);
+	return (ch >= '0' && ch <= '9');
 }
